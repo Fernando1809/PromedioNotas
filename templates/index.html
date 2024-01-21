@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedio</title>
+</head>
+<body>
+    <h1>Calculadora de Promedio</h1>
+    <form action="/calcular_promedio" method="post">
+        {% for i in range(1, 4) %}
+            <h2>Computo {{ i }}</h2>
+            <label for="laboratorio1_{{ i }}">Nota Laboratorio 1:</label>
+            <input type="text" name="laboratorio1_{{ i }}" required><br>
+
+            <label for="laboratorio2_{{ i }}">Nota Laboratorio 2:</label>
+            <input type="text" name="laboratorio2_{{ i }}" required><br>
+
+            <label for="parcial_{{ i }}">Nota Parcial:</label>
+            <input type="text" name="parcial_{{ i }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Calcular Promedio</button>
+    </form>
+</body>
+</html>
